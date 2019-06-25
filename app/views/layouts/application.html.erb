@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html>
+  
   <head>
     <title>PhilTechNewsSite062419</title>
     <%= csrf_meta_tags %>
@@ -9,7 +11,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="container">
+    <main>
+      <% if flash[:notice] %>
+        <p class="alert alert-info">
+          <%= flash[:notice] %>
+        </p>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
+
 </html>
