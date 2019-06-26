@@ -11,9 +11,11 @@ class UsersController < ApplicationController
       redirect_back fallback_location: new_user_path
     else
       render :new
+    end
   end
 
   private
+    
     def user_params
       params.require(:user).permit(:username, :password)
     end
