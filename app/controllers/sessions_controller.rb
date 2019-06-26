@@ -15,6 +15,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    logout
+    redirect_back fallback_location: new_session_path, notice: 'Logged out'
+  end
+
   private
 
   def login_params
